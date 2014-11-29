@@ -1,3 +1,5 @@
+local Map = require "map"
+
 function love.load()
   love.window.setMode(960, 544)
 end
