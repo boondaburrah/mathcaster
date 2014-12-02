@@ -3,7 +3,11 @@ local Line = require "line"
 local Camera = require "camera"
 local Vector = require "hump.vector"
 
-function love.load()
+function love.load(arg)
+  if arg[#arg] == "-debug" then
+    require("mobdebug").start()
+  end
+  
   love.window.setMode(960, 544)
   g_map = Map()
   g_camera = Camera(Vector.new(0, 0), 90)
