@@ -20,7 +20,7 @@ function love.load(arg)
 end
 
 function love.update(dt)
-  -- pass
+  g_camera:update(g_map)
 end
 
 function love.draw()

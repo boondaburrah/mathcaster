@@ -23,6 +23,12 @@ local Camera = Class{
   createRefMap = function(self, map)
     self.refMap = map:clone()
   end,
+  
+  update = function(self, map)
+    self:createRefMap(map)
+    self:updateMapLoc()
+    self:updateMapRot()
+  end,
 
   segmentToHOffset = function(self, segment)
     return math.abs((self.height / 2) / segment)
