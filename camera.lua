@@ -6,9 +6,22 @@ local Camera = Class{
     self.heading = rotation
     self.width = 960
     self.height = 544
-    self.fov = 90
+    self.fov = math.pi / 2
     self.wallSegments = {}
+    self.refMap = {}
     self.stepsize = self.fov / self.width
+  end,
+  
+  updateMapLoc = function(self)
+    self.refMap:move(self.location)
+  end,
+  
+  updateMapRot = function(self)
+    self.refMap:rotate(self.heading)
+  end,
+  
+  createRefMap = function(self, map)
+    self.refMap = map:clone()
   end,
 
   segmentToHOffset = function(self, segment)
