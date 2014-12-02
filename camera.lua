@@ -10,6 +10,7 @@ local Camera = Class{
     self.wallSegments = {}
     self.refMap = {}
     self.stepsize = self.fov / self.width
+    self.startSweep = 0 - (self.fov / 2)
   end,
   
   updateMapLoc = function(self)
