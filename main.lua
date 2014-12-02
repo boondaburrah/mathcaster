@@ -10,7 +10,7 @@ function love.load(arg)
   
   love.window.setMode(960, 544)
   g_map = Map()
-  g_camera = Camera(Vector.new(0, 0), 90)
+  g_camera = Camera(Vector.new(0, 0), math.pi / 2)
 
   -- test code/futzing around
   g_map:addBrush(Line(-1, -1, -1, 1))
