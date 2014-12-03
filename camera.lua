@@ -46,6 +46,10 @@ local Camera = Class{
     end
   end,
 
+  move = function(self, vec)
+    self.location = self.location + Vector.new(mfunc:rotPoint(vec.x, vec.y, -self.heading))
+  end,
+
   update = function(self, map)
     self:createRefMap(map)
     self:updateMapLoc()
