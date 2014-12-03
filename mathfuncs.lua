@@ -24,10 +24,11 @@ function Mathfuncs:testLine(line, rad)
   local u = line.from:cross(ray) / ray:cross(seg)
   local check = ray * t
   local check2 = line.from + (u * seg)
-  if check == check2 and check.y > 0 then
+  --if check == check2 and check.y > 0 then
+  if check.y > 0 and seg * (check - line.from) <= line.from:dist2(line.to) and seg * (check - line.from) >= 0 then
     return check
   else
-    return check
+    return nil
   end
 end
 

@@ -37,12 +37,12 @@ local Camera = Class{
         end
       end
     end
-    if distance ~= nil then return distance end
+    return distance
   end,
 
   checkRays = function(self)
     for i = 1, self.width do
-      self.wallSegments[i] = self:checkMapForRay((i * self.stepsize) + self.startSweep)
+      self.wallSegments[i] = self:checkMapForRay((i * self.stepsize) - self.startSweep)
     end
   end,
 
@@ -64,7 +64,9 @@ local Camera = Class{
 
   draw = function(self)
     for i = 1, self.width do
-      love.graphics.line(self:segmentToLine(self.wallSegments[i] or 2, i))
+      if self.wallSegments[i] ~= nil then
+        love.graphics.line(self:segmentToLine(self.wallSegments[i] or 2, i))
+      end
     end
   end
 }

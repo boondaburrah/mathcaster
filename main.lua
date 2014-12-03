@@ -14,9 +14,9 @@ function love.load(arg)
 
   -- test code/futzing around
   g_map:addBrush(Line(-1, -1, -1, 1))
-  g_map:addBrush(Line(-1, -1, 1, -1))
-  g_map:addBrush(Line(1, -1, 1, 1))
-  g_map:addBrush(Line(1, 1, -1, 1))
+  --g_map:addBrush(Line(-1, -1, 1, -1))
+  --g_map:addBrush(Line(1, -1, 1, 1))
+  --g_map:addBrush(Line(1, 1, -1, 1))
 end
 
 function love.update(dt)
