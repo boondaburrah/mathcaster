@@ -7,7 +7,7 @@ function love.load(arg)
   if arg[#arg] == "-debug" then
     require("mobdebug").start()
   end
-  
+
   love.window.setMode(960, 544)
   g_map = Map()
   g_camera = Camera(Vector.new(0, 0), math.pi / 2)
@@ -21,6 +21,7 @@ end
 
 function love.update(dt)
   g_camera:update(g_map)
+  g_camera.heading = g_camera.heading + 0.01
 end
 
 function love.draw()
