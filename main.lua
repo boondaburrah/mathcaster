@@ -29,8 +29,13 @@ function love.update(dt)
     g_camera:move(Vector.new(0, -0.01))
   end
   if love.keyboard.isDown('a') then
-    g_camera.heading = g_camera.heading + 0.01
+    g_camera:move(Vector.new(0.01, 0))
   elseif love.keyboard.isDown('d') then
+    g_camera:move(Vector.new(-0.01, 0))
+  end
+  if love.keyboard.isDown('j') then
+    g_camera.heading = g_camera.heading + 0.01
+  elseif love.keyboard.isDown('l') then
     g_camera.heading = g_camera.heading - 0.01
   end
 end
